@@ -1,35 +1,39 @@
 # Inventory Management System
 
-A simple inventory management system built with Python and SQLite.
+A simple inventory management system built with Python and SQLite, featuring persistent data storage and automated tests.
 
 ## Overview
 
 This project was developed as a personal software engineering portfolio project.
 
-The system provides basic operations for managing products in an inventory database.
+The application provides CRUD operations for managing products in an inventory database, including creating, listing, updating, and deleting products.
 
 ## Technologies
 
 - Python
 - SQLite
 - SQL
+- Pytest
 - Git
 - GitHub
 
 ## Features
 
-- Create products
-- List products
-- Update products
+- Add products to inventory
+- List stored products
+- Update product information
 - Delete products
-- SQLite database
-- Basic data validation
+- Persistent SQLite database
 - CRUD operations
+- Automated testing with Pytest
+- Temporary test database isolation
 
 ## Project Structure
 
 ```text
 inventory-management-system/
+├── tests/
+│   └── test_inventory.py
 ├── app.py
 ├── .gitignore
 └── README.md
@@ -37,13 +41,13 @@ inventory-management-system/
 
 ## Database
 
-The project uses SQLite to store product information.
+The application uses SQLite for persistent product storage.
 
-The database contains the following fields:
+The `products` table contains:
 
 | Field | Type | Description |
 |---|---|---|
-| id | INTEGER | Product identifier |
+| id | INTEGER | Unique product identifier |
 | name | TEXT | Product name |
 | quantity | INTEGER | Available quantity |
 | price | REAL | Product price |
@@ -62,28 +66,52 @@ Navigate to the project directory:
 cd inventory-management-system
 ```
 
-Run the application:
+## Running the Application
+
+Run:
 
 ```bash
 python app.py
 ```
 
-## Example
+The application provides an interactive command-line interface for inventory management.
 
-When the application starts, it initializes the SQLite database and creates the products table if it does not already exist.
+## Running the Tests
+
+Install Pytest:
+
+```bash
+pip install pytest
+```
+
+Run the automated test suite:
+
+```bash
+python -m pytest tests -v
+```
+
+The test suite currently covers:
+
+- Adding products
+- Updating products
+- Deleting products
+
+Current test result:
+
+```text
+3 passed
+```
 
 ## Future Improvements
 
-Possible improvements for future versions:
-
-- Command-line interface
-- Product search
+- Product search and filtering
 - Stock alerts
-- Input validation improvements
+- Improved input validation
 - REST API integration
 - Web interface
-- Automated tests
+- Additional automated tests
 - PostgreSQL support
+- Continuous integration with GitHub Actions
 
 ## Author
 
